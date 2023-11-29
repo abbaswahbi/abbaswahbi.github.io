@@ -21,7 +21,10 @@
 :root {
   --color-default: #222222;
   --color-primary: #008374;
-  --color-secondary: #f85a40;
+  /* --color-primary: #FFB833; */
+  /* --color-primary: #f85a40; */
+  /* --color-secondary: #f85a40; */
+  --color-secondary: #FFB833;
 }
 
 /* Smooth scroll behavior */
@@ -44,6 +47,7 @@ a {
 
 a:hover {
   color: #00b6a1;
+  /* color: #FFB833; */
   text-decoration: none;
 }
 
@@ -166,22 +170,58 @@ section {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background: var(--color-secondary);
+  /* background: var(--color-secondary); */
+  background: var(--color-primary);
   width: 44px;
   height: 44px;
   border-radius: 50px;
-  transition: all 0.4s;
+  /* transition: all 0.4s; */
+  transition: all 0.3s ease-out 0s;
+  
+  transform-style: preserve-3d;
 }
 
 .scroll-top i {
   font-size: 24px;
   color: #fff;
+  /* color: #008374; */
   line-height: 0;
+}
+/* .scroll-top i:hover {
+  font-size: 24px;
+  color: #008374;
+  line-height: 0;
+} */
+
+.scroll-top::before {
+  position: absolute;
+  content: "";
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  background: #87c1bb;
+  transition: all 0.5s ease-out 0s;
+  transform: translateZ(-1px);
+}
+.scroll-top::after {
+  position: absolute;
+  content: "";
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background: #d2eeeb;
+  transition: all 0.6s ease-out 0s;
+  transform: translateZ(-2px);
 }
 
 .scroll-top:hover {
-  background: rgba(248, 90, 64, 0.8);
+  /* background: rgba(248, 90, 64, 0.8); */
+  /* background: hsl(180, 100%, 100%); */
+  /* background:hsl(173, 100%, 26%); */
+  background:var(--color-secondary);
   color: #fff;
+  /* color: #008374; */
+  /* color: var(--color-primary); */
 }
 
 .scroll-top.active {
@@ -200,6 +240,41 @@ section {
   overflow: hidden;
   background: #fff;
   transition: all 0.6s ease-out;
+
+  /* --size: 40px; */
+  /* position: relative; */
+  /* width: var(--size); */
+  /* height: var(--size); */
+}
+
+#preloader img {
+  /* width: 80px; */
+  /* width: 80px; */
+  /* height: 30px; */
+  /* margin: auto; */
+  /* animation: spin 2s linear infinite; */
+  /* position: fixed; */
+  /* position: absolute; */
+  /* left: 50%; */
+  /* top: 50%; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+
+  --size: 60px;
+  position: relative;
+  width: var(--size);
+  height: var(--size + 20);
+
+  /* display: block; */
+  /* margin: 0 auto; */
+  /* position: absolute; */
+
+  /* position: fixed; */
+  top: calc(50% + 20px);
+  /* left: calc(51% - 28px); */
+  left: calc(50% + 20px);
+  transform: translate(-50%, -50%);
 }
 
 #preloader:before {
@@ -208,10 +283,13 @@ section {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #fff;
-  border-color: var(--color-primary) transparent var(--color-primary) transparent;
+  /* border-color: var(--color-primary) transparent var(--color-primary) transparent; */
+  border-color: var(--color-secondary) transparent var(--color-secondary) transparent;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  /* width: 60px; */
+  width: 100px;
+  /* height: 60px; */
+  height: 100px;
   animation: animate-preloader 1.5s linear infinite;
 }
 
@@ -963,7 +1041,8 @@ section {
   content: "";
   height: 100%;
   width: 100%;
-  background: #eeeeee;
+  /* background: #eeeeee; */
+  background: #ffc107;
   border-radius: 50px;
   z-index: 1;
   top: 10px;
@@ -979,7 +1058,8 @@ section {
   font-size: 22px;
   position: relative;
   display: inline-block;
-  border-bottom: 4px solid #eeeeee;
+  /* border-bottom: 4px solid #eeeeee; */
+  border-bottom: 4px solid #ffc107;
   transition: 0.3s;
 }
 
@@ -1996,11 +2076,13 @@ section {
 
 .hero .icon-box:hover {
   background: #009786;
+  /* background: #ffc107; */
 }
 
 .hero .icon-box:hover .title a,
 .hero .icon-box:hover .icon {
-  color: #fff;
+  /* color: #fff; */
+  color: #ffc107;
 }
 
 /*--------------------------------------------------------------
@@ -2601,8 +2683,10 @@ section {
 }
 
 .footer .social-links a:hover {
-  color: #fff;
-  border-color: #fff;
+  /* color: #fff; */
+  color: #FFB833;
+  /* border-color: #fff; */
+  border-color: #FFB833;
 }
 
 .footer h4 {
@@ -2655,12 +2739,14 @@ section {
 }
 
 .footer .copyright {
-  text-align: center;
+  /* text-align: center; */
+  text-align: justify;
 }
 
 .footer .credits {
   padding-top: 4px;
-  text-align: center;
+  /* text-align: center; */
+  text-align: justify;
   font-size: 13px;
 }
 
